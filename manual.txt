@@ -1,0 +1,4 @@
+1. Run docker engine
+2. Run postgres image (bash + docker)
+3. Connect to postgres (anaconda prompt + pgcli)
+4. Ingest data to db (anaconda prompt + jupyter + upload file)
