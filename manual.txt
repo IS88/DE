@@ -2,4 +2,4 @@
 2. Run postgres image (bash + docker)
 3. Connect to postgres (anaconda prompt + pgcli)
 4. Ingest data to db (anaconda prompt + jupyter + upload file)
-5. Eba-eba.
+5. test_commit
