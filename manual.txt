@@ -3,3 +3,4 @@
 3. Connect to postgres (anaconda prompt + pgcli)
 4. Ingest data to db (anaconda prompt + jupyter + upload file)
 5. test_commit
+6. test_commit_2
