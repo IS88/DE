@@ -1,7 +1,7 @@
 terraform {
   required_providers {
     google = {
-      source = "hashicorp/google"
+      source  = "hashicorp/google"
       version = "7.9.0"
     }
   }
@@ -9,8 +9,8 @@ terraform {
 
 provider "google" {
   credentials = file("./credentials.json")
-  project = "de-test-476612"
-  region = "us-central1"
+  project     = "de-test-476612"
+  region      = "us-central1"
 }
 
 
@@ -27,4 +27,10 @@ resource "google_storage_bucket" "test_bucket" {
       type = "Delete"
     }
   }
+}
+
+
+
+resource "google_bigquery_dataset" "test_dataset" {
+  dataset_id = "test_dataset"
 }
