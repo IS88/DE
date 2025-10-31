@@ -1,22 +1,22 @@
 terraform {
   required_providers {
     google = {
-      source  = "hashicorp/google"
+      source = "hashicorp/google"
       version = "7.9.0"
     }
   }
 }
 
 provider "google" {
-  credentials = file("./credentials.json")
-  project     = "de-test-476612"
-  region      = "us-central1"
+  credentials = file(var.Credentials)
+  project = var.Project
+  region = var.Region
 }
 
 
 resource "google_storage_bucket" "test_bucket" {
-  name          = "de-test-476612-terra-bucket"
-  location      = "US"
+  name          = var.gcs_storage_test
+  location      = var.Location
   force_destroy = true
 
   lifecycle_rule {
@@ -29,8 +29,7 @@ resource "google_storage_bucket" "test_bucket" {
   }
 }
 
-
-
 resource "google_bigquery_dataset" "test_dataset" {
-  dataset_id = "test_dataset"
+  dataset_id = var.bq_test_dataset
+  location = var.Location
 }
