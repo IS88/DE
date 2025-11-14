@@ -24,6 +24,24 @@ services:
     networks:
       - pg-network
 
+  kestra:
+    image: ghcr.io/kestra-io/kestra:latest
+    container_name: kestra
+    command: server all
+    depends_on:
+      - "pgdatabase"
+    ports:
+      - "8080:8083"
+    environment:
+      KESTRA_DATABASE_TYPE: postgres
+      KESTRA_DATABASE_POSTGRES_URL: jdbc:postgresql://pgdatabase:5432/ny_taxi
+      KESTRA_DATABASE_POSTGRES_USERNAME: kestra
+      KESTRA_DATABASE_POSTGRES_PASSWORD: kestra
+    volumes:
+      - ./kestra-data:/app/data  
+    networks:
+      - pg-network
+
 networks:
   pg-network:
     name: pg-network
