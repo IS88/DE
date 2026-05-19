@@ -1,0 +1,8 @@
+version:2
+
+sources:
+  - name: raw_data
+    description: "Raw data sources for NYC trips"
+    database: de-test-476612 # Project ID in the bigquery
+    schema: bq_dataset # Dataset name
+    tables: yellow_tripdata_partitioned_clustered  # Table in dataset
